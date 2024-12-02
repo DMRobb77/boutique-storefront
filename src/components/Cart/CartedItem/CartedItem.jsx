@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
 const CartedItem = (props) => {
-  return <button onClick={() => props.clickEvent(props.itemName)}>{props.itemName}</button>;
+  return <button onClick={() => props.clickEvent(props.item.id)}>{props.item.name}</button>;
 };
 
 CartedItem.propTypes = {
-  itemName: PropTypes.number.isRequired,
+  item: PropTypes.object.isRequired,
   clickEvent: PropTypes.func,
 };
 

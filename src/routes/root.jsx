@@ -13,8 +13,8 @@ export default function Root() {
     console.log(itemsInCart);
   };
 
-  const removeItemFromCart = (removedItem) => {
-    setItemsInCart((prevItems) => prevItems.filter((item) => item !== removedItem));
+  const removeItemFromCart = (removedItemId) => {
+    setItemsInCart((prevItems) => prevItems.filter((item) => item.id !== removedItemId));
   };
 
   return (

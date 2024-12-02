@@ -10,8 +10,8 @@ const Cart = (props) => {
   const toggleCart = () => setIsCartDisplayed(!isCartDisplayed);
 
   const cartedItems = props.items.map((item) => (
-    <li key={item}>
-      <CartedItem itemName={item} clickEvent={props.removeItemFromCart} />
+    <li key={item.id}>
+      <CartedItem item={item} clickEvent={props.removeItemFromCart} />
     </li>
   ));
 

@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const Checkout = () => {
@@ -6,7 +5,7 @@ const Checkout = () => {
   return (
     <ul>
       {itemsInCart.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item.id}>{item.name}</li>
       ))}
     </ul>
   );

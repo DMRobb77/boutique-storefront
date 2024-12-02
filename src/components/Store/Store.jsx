@@ -1,14 +1,20 @@
 import Item from './Item/Item';
 
-const Store = () => {
-  const items = [];
-  for (let i = 0; i <= 12; i++) {
-    items.push(i);
-  }
+// Placeholder items
+const items = [];
+for (let i = 0; i <= 12; i++) {
+  items.push({
+    name: 'Item ' + i,
+    id: i,
+    price: i * 20,
+    quantity: 1,
+  });
+}
 
+const Store = () => {
   const itemList = items.map((item) => (
-    <li key={item}>
-      <Item itemName={item} />
+    <li key={item.id}>
+      <Item item={item} />
     </li>
   ));
 
