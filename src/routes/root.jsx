@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Root() {
   const [itemsInCart, setItemsInCart] = useState([]);
+  const [isCartDisplayed, setIsCartDisplayed] = useState(false);
   const location = useLocation();
   const currentRoute = location.pathname;
 
@@ -17,11 +18,16 @@ export default function Root() {
     setItemsInCart((prevItems) => prevItems.filter((item) => item.id !== removedItemId));
   };
 
+  const toggleCart = () => setIsCartDisplayed(!isCartDisplayed);
+
   return (
     <>
       <header>
         <h1>THE SHOP</h1>
-        {currentRoute !== '/checkout' && <Cart items={itemsInCart} removeItemFromCart={removeItemFromCart} />}
+        {currentRoute !== '/checkout' && <Cart items={itemsInCart} 
+          removeItemFromCart={removeItemFromCart}
+          clickEvent={toggleCart} 
+          isCartDisplayed={isCartDisplayed} />}
       </header>
       <nav>
         <Link to={`/`}>Home</Link>

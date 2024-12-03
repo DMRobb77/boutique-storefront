@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 
 const CartedItem = (props) => {
-  return <button onClick={() => props.clickEvent(props.item.id)}>{props.item.name}</button>;
+  return (
+    <button onClick={() => props.clickEvent(props.item.id)}>
+      {props.item.name} x {props.item.quantity}
+    </button>
+  );
 };
 
 CartedItem.propTypes = {
