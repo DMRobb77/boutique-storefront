@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
-
+import './item.css';
 
 const Item = ({item, onQuantityChange}) => {
 
@@ -16,14 +16,14 @@ const Item = ({item, onQuantityChange}) => {
   const { addItemToCart } = useOutletContext();
 
   return (
-    <span>
-      <span>I am an item. In fact, Im {item.name}</span>
+    <div className='item'>
+      <span>{item.title}</span>
       <div className="quantity">
         <input name="quantity" type="number" min={1} max={99} 
           value={quantity} onChange={handleQuantityChange}></input>
       </div>
       <button onClick={() => addItemToCart(item)}>Add To Cart</button>;
-    </span>
+    </div>
   );
 };
 

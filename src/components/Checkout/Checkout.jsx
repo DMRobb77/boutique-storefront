@@ -10,10 +10,11 @@ const Checkout = () => {
     <>    
       <ul>
         {itemsInCart.map((item) => (
-          <li key={item.id}>{item.name} x {item.quantity} at price of {item.price} each</li>
+          <li key={item.id}>{item.title} x {item.quantity} at price of {item.price} each</li>
         ))}
       </ul>
       <p>Total: {totalCost}</p>
+      <button>Buy Now</button>
     </>
   );
 };

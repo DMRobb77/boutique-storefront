@@ -14,3 +14,7 @@
 .sidebar.hidden {
   transform: translateX(100%);
 }
+
+.cart {
+  margin: 0 auto;
+}

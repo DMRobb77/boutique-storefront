@@ -1,0 +1,20 @@
+main, .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: cadetblue;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+}
+
+
+.cart {
+
+}
