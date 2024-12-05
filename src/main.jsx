@@ -7,6 +7,8 @@ import App from './App.jsx';
 import Store from './components/Store/Store.jsx';
 import Root from './routes/root.jsx';
 import Checkout from './components/Checkout/Checkout.jsx';
+import DetailedItem from './components/Store/DetailedItem/DetailedItem.jsx';
+import { StoreProvider } from './components/Store/StoreProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'store',
-        element: <Store />,
+        element: (
+          <StoreProvider>
+            <Store />
+          </StoreProvider>
+        ),
+        children: [
+          {
+            path: ":itemId",
+            element: <DetailedItem />
+          }
+        ]
       },
       {
         path: 'checkout',
