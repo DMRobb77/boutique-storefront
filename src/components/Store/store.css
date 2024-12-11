@@ -1,7 +1,18 @@
 ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat();
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(auto-fit, 210px);
+    grid-auto-rows: 1fr;
+    gap: 35px; */
+    gap: 3rem;
+    justify-content: center;
+    width: 100%;
 }
 
+
+li a {
+    width: 4rem;
+    text-decoration: none;
+
+}

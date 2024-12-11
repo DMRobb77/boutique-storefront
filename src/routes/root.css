@@ -1,20 +1,43 @@
-main, .container {
+* {
+    /* border: 1px solid red; */
+}
+
+#root {
+    min-height: 100vh;
+}
+
+main, .header-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
     box-sizing: border-box;
 }
 
+.header-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+}
+
 nav {
     background-color: cadetblue;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav div {
+    width: 8rem;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 10rem;
-}
-
-
-.cart {
-
 }

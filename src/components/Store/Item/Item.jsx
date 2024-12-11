@@ -1,35 +1,22 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import './item.css';
 
-const Item = ({item, onQuantityChange}) => {
+const Item = ({item}) => {
 
-  // const [quantity, setQuantity] = useState(item.quantity);
-
-  // const handleQuantityChange = (e) => {
-  //   const newQuantity = parseInt(e.target.value, 10) || 0;
-  //   setQuantity(newQuantity);
-  //   onQuantityChange(item.id, newQuantity);
-  // }
-
-  // const { addItemToCart } = useOutletContext();
-
+  console.log(`displaying ${item.title}`);
   return (
     <div className='item'>
-      <span>{item.title}</span>
-      {/* <div className="quantity">
-        <input name="quantity" type="number" min={1} max={99} 
-          value={quantity} onChange={handleQuantityChange}></input>
+      <div className='image-container'>
+        <img src={item.image} width={'120px'}></img>
       </div>
-      <button onClick={() => addItemToCart(item)}>Add To Cart</button>; */}
+      <h3>{item.title}</h3>
+      <h4>${item.price}</h4>
     </div>
   );
 };
 
 Item.propTypes = {
-  item: PropTypes.object.isRequired,
-  onQuantityChange: PropTypes.func
+  item: PropTypes.object.isRequired
 };
 
 export default Item;

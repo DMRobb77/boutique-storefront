@@ -32,7 +32,9 @@ export default function Root() {
     setItemsInCart((prevItems) => prevItems.filter((item) => item.id !== removedItemId));
   };
 
-  const toggleCart = () => setIsCartDisplayed(!isCartDisplayed);
+  const toggleCart = () => {
+    setIsCartDisplayed(!isCartDisplayed);
+  };
 
   // If we go to checkout, hide the cart when we return to shop
   useEffect(() => {
@@ -44,21 +46,25 @@ export default function Root() {
   return (
     <>
       <header>
-        <div className='container'>
+        <div className='header-container'>
           <h1>THE SHOP</h1>
-          {currentRoute !== '/checkout' && <Cart items={itemsInCart} 
-            removeItemFromCart={removeItemFromCart}
-            clickEvent={toggleCart} 
-            isCartDisplayed={isCartDisplayed} />}
+          <nav>
+            <Link to={`/`}>Home</Link>
+            <Link to={`store`}>Shop</Link>
+            <Link to ={'checkout'}>Checkout</Link>
+            <div>
+              { currentRoute === '/checkout' ? 
+                <button onClick={toggleCart} disabled>Open Cart</button> :
+                <button onClick={toggleCart}>Open Cart</button>}
+                {currentRoute !== '/checkout'
+                && <Cart items={itemsInCart} 
+                removeItemFromCart={removeItemFromCart}
+                clickEvent={toggleCart} 
+                isCartDisplayed={isCartDisplayed} />}
+            </div>
+          </nav>
         </div>
       </header>
-      <nav>
-        <div className="container">
-          <Link to={`/`}>Home</Link>
-          <Link to={`store`}>Shop</Link>
-          <Link to ={'checkout'}>Checkout</Link>
-        </div>
-      </nav>
       <main>
         <Outlet context={{ addItemToCart, itemsInCart }} />
       </main>

@@ -1,6 +1,7 @@
 import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 import { useStore } from "../StoreProvider";
 import { useState } from "react";
+import './detailedItem.css';
 
 const DetailedItem = () => {
     const { itemId } = useParams();
@@ -21,17 +22,27 @@ const DetailedItem = () => {
     }
     
     return (
-        <div>
+        <div className="detailed-item">
             <button onClick={() => navigate(-1)}>Back to Store</button>
             <div>
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-                <p>Price: ${item.price}</p>
-                <div className="quantity">
-                    <input name="quantity" type="number" min={1} max={99} 
-                    value={quantity} onChange={handleQuantityChange}></input>
+                <div className="item-details-top">
+                    <div className="detailed-image-container">
+                        <img src={item.image} width={'250px'}></img>
+                    </div>
+                    <div className="item-details-top-right">
+                        <h2>{item.title}</h2>
+                        <p>${item.price}</p>
+                        <div className="quantity">
+                            <button>-</button>
+                            <input name="quantity" type="number" min={1} max={99} 
+                            value={quantity} onChange={handleQuantityChange}></input>
+                            <button>+</button>
+                        </div>
+                        <button onClick={() => addItemToCart(item)}>Add to cart</button>
+                    </div>
                 </div>
-                <button onClick={() => addItemToCart(item)}>Add to cart</button>
+                <hr></hr>
+                <p>{item.description}</p>
             </div>
         </div>
     );

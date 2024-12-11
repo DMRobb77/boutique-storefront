@@ -1,3 +1,44 @@
 .item {
-    background-color: slategray;
+    background-color: lightgray;
+    justify-content: center;
+    display: flexbox;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 5px;
+    width: 15rem;
+
+}
+
+.item h3 {
+    text-decoration: none;
+    color: black;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    height: calc(1.2em * 4);
+    margin: 2px 8px;
+}
+
+.item h4 {
+    color: rgb(92, 92, 92);
+    margin: 8px 8px;
+}
+
+.image-container {
+    background-color: white;
+    justify-content: center;
+    width: 100%;
+    height: 14rem;
+    border-radius: 5px 5px 0 0;
+}
+
+img {
+    display: block;
+    vertical-align: middle;
+    justify-self: center;
+    height: 100%;
+    object-fit: contain;
 }
