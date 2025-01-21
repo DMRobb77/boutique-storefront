@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import './cart.css';
 import CartedItem from './CartedItem/CartedItem';
 
-const Cart = ({ isCartDisplayed, clickEvent, items, removeItemFromCart}) => {
+const Cart = ({ isCartDisplayed, clickEvent, itemsInCart, removeItemFromCart}) => {
 
-  const cartedItems = items.map((item) => (
+  const cartedItems = itemsInCart.map((item) => (
     <li key={item.id}>
       <CartedItem item={item} clickEvent={removeItemFromCart} />
     </li>
   ));
+
 
   return (
     <div 
@@ -35,7 +36,7 @@ const Cart = ({ isCartDisplayed, clickEvent, items, removeItemFromCart}) => {
 };
 
 Cart.propTypes = {
-  items: PropTypes.array,
+  itemsInCart: PropTypes.array,
   removeItemFromCart: PropTypes.func,
   clickEvent: PropTypes.func,
   isCartDisplayed: PropTypes.bool

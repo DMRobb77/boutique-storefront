@@ -1,3 +1,17 @@
+/* Remove default input arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 .detailed-item {
     display: flex;
     flex-direction: column;
@@ -43,7 +57,10 @@
     -webkit-line-clamp: 4;
     line-clamp: 4;
     height: calc(1.2em * 4);
-    margin: 8px;
+}
+
+.item-details-top-right p, h2 {
+    margin: 10px;
 }
 
 .detailed-item>button {
@@ -70,8 +87,20 @@
 .quantity {
     display: flex;
     width: 100%;
+    margin: 10px;
+    align-self: center;
 }
 
 .quantity input{
     /* width: 100%; */
+    font-size: 1.2rem;
+    text-align: center;
+    align-self: center;
+}
+
+.quantity button {
+    font-size: 1.5rem;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 3rem;
 }

@@ -41,8 +41,6 @@ export const StoreProvider = ({ children }) => {
     fetchItems();
   }, [items])
 
-  console.log(items);
-
     return <StoreContext.Provider value={items}>{children}</StoreContext.Provider>;
 };
 

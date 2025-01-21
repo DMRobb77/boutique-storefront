@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import './item.css';
 
 const Item = ({item}) => {
-
-  console.log(`displaying ${item.title}`);
   return (
     <div className='item'>
       <div className='image-container'>

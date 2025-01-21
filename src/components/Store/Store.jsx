@@ -12,13 +12,10 @@ const Store = () => {
   const itemList = items.map((item) => (
     <li key={item.id}>
       <Link to={`/store/${item.id}`}>
-      {console.log(`here comes ${item.title}`)}
         <Item item={item} />
       </Link>
     </li>
   ));
-
-  console.log(`gonna display ${JSON.stringify(items)}`);
 
   return (
     <>

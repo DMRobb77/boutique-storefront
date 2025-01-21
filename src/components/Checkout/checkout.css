@@ -1,0 +1,17 @@
+* {
+    border: solid 1px red;
+}
+
+ul {
+    display: flex;
+    justify-items: center;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: row;
+}
+
+.total {
+    width: 10rem;
+}
