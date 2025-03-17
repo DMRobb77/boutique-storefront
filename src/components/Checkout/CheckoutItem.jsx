@@ -1,12 +1,23 @@
 import PropTypes from "prop-types";
 import QuantityInput from "../Utility/QuantityInput";
+import { priceFormmatterUSD } from "../Utility/priceFormatterUSD";
 
 const CheckoutItem = ({item}) => {
+
     return (
-        <div>
-            <img src={item.image} width={'100px'}></img>
-            <h1>{item.title}</h1>
-            <QuantityInput item={item}/>
+        <div className="checkout-item">
+            <div className="image-container">
+                <img src={item.image} width={'100px'}></img>
+            </div>
+            <div className="details-container">
+                <div className="details-top">
+                  <span className="item-name">{item.title}</span>
+                  <span className="price">{priceFormmatterUSD(item.price)}</span>
+                </div>
+                <div className="details-bottom">
+                    <QuantityInput item={item}/>
+                </div>
+            </div>
         </div>
     )
 }

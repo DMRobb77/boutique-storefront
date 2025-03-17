@@ -5,7 +5,7 @@ const Item = ({item}) => {
   return (
     <div className='item'>
       <div className='image-container'>
-        <img src={item.image} width={'120px'}></img>
+        <img src={item.image} width={'180px'}></img>
       </div>
       <h3>{item.title}</h3>
       <h4>${item.price}</h4>

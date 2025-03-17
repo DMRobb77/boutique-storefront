@@ -1,18 +1,18 @@
-ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    /* grid-template-columns: repeat(auto-fit, 210px);
-    grid-auto-rows: 1fr;
-    gap: 35px; */
-    gap: 3rem;
-    justify-content: center;
-    width: 100%;
+.store {
+  width: clamp(400px, 100%, 1400px);
+  margin: 0 auto;
 }
 
+.store ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
 
-li a {
-    width: 4rem;
-    text-decoration: none;
-
+.store li a {
+  width: 4rem;
+  text-decoration: none;
 }

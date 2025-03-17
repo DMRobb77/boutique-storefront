@@ -1,21 +1,25 @@
 import PropTypes from 'prop-types';
 import QuantityInput from '../../Utility/QuantityInput';
+import { priceFormmatterUSD } from '../../Utility/priceFormatterUSD';
 
-const CartedItem = (props) => {
+const CartedItem = ({item}) => {
 
   return (
-    <div>
-      {props.item.title}
-      <QuantityInput item={props.item}/>
-      <button onClick={() => props.clickEvent(props.item.id)}>X
-      </button>
+    <div className="cart-details">
+      <div className="cart-image-container">
+          <img src={item.image} width={'50px'}></img>
+      </div>
+      <div className="cart-details-right">
+          <h2>{item.title}</h2>
+          <p className="price">{priceFormmatterUSD(item.price)}</p>
+          <QuantityInput item={item}/>
+      </div>
     </div>
   );
 };
 
 CartedItem.propTypes = {
   item: PropTypes.object.isRequired,
-  clickEvent: PropTypes.func,
 };
 
 export default CartedItem;

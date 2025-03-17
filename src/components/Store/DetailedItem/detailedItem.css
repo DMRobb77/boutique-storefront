@@ -11,17 +11,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
 .detailed-item {
     display: flex;
     flex-direction: column;
     justify-self: center;
     width: 45rem;
     margin: 10px;
-}
-
-.detailed-item * {
-    /* border: solid 1px red; */
 }
 
 .item-details-top {
@@ -63,8 +58,9 @@ input[type=number] {
     margin: 10px;
 }
 
-.detailed-item>button {
+.detailed-item>a {
     position: absolute;
+    width: 3rem;
 }
 
 .detailed-image-container {
@@ -81,6 +77,8 @@ input[type=number] {
     vertical-align: middle;
     justify-self: center;
     height: 100%;
+    width: 100%;
+    padding: 1rem;
     object-fit: contain;
 }
 

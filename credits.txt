@@ -1,0 +1,6 @@
+Fake Store API
+https://fakestoreapi.com/
+
+Background texture
+Photo by <a href="https://unsplash.com/@kiwihug?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kiwihug</a> on <a href="https://unsplash.com/photos/white-textile-with-black-shadow-MS9Tnh3if1o?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      

@@ -2,21 +2,108 @@
   position: fixed;
   right: 0;
   top: 0;
-  width: 30%;
+  width: clamp(400px, 38%, 800px);
   height: 100%;
   background-color: #575454;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  padding: 20px;
   transform: translateX(0);
   transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar ul {
+  list-style: none;
 }
 
 .sidebar.hidden {
   transform: translateX(100%);
 }
 
-.cart {
-  margin: 0 auto;
+.cart-top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--charcoal);
+  font-size: 1.3rem;
+  padding: 1rem 1.5rem;
+}
+
+.cart-top button {
+  height: 2rem;
+}
+
+.cart-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem 0.75rem 0 1rem;
+  margin: 0;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.cart-bottom li {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cart-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100%;
+  gap: 15px;
+}
+
+.cart-details-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.cart-details-right h2 {
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  height: calc(1rem * 4);
+  margin: 0;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.cart-details-right .price {
+  margin: 0;
+}
+
+.cart-details-right .quantity *{
+  font-size: 1rem;
+}
+
+.cart-image-container {
+  background-color: white;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 5px 5px;
+  align-self: center;
+}
+
+.cart-image-container img {
+  display: block;
+  justify-self: center;
+  height: 100%;
+  object-fit: contain;
 }
 
 .modal-overlay {
@@ -38,4 +125,19 @@
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  z-index: 1000;
+}
+
+.checkout-link {
+  width: 100%;
+  padding: 1rem 2rem 3rem 2rem;
+}
+
+.checkout-link a{
+  text-decoration: none;
+  font-size: 1.3rem;
+  /* background-color: var(--orchid); */
+  color: white;
+  border: solid 2px var(--white);
+  padding: 0.3rem 0.8rem;
 }

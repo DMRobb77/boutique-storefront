@@ -5,8 +5,7 @@ import { useStore } from './StoreProvider';
 
 const Store = () => {
   const { addItemToCart } = useOutletContext();
-  const location = useLocation();
-  const currentRoute = location.pathname;
+  const { pathname } = useLocation();
   const items = useStore();
 
   const itemList = items.map((item) => (
@@ -18,10 +17,10 @@ const Store = () => {
   ));
 
   return (
-    <>
-      {currentRoute === '/store' && <ul>{itemList}</ul> }
+    <div className='store'>
+      {pathname === '/store' && <ul>{itemList}</ul> }
       <Outlet context={{ addItemToCart  }} />
-    </>
+    </div>
   );
 };
 

@@ -1,53 +1,47 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import Cart from '../components/Cart/Cart';
 import { useEffect, useState } from 'react';
 import './root.css';
 import { CartContext } from '../components/Contexts';
-
+import CartButton from '../components/Cart/CartButton/CartButton';
 
 export default function Root() {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [isCartDisplayed, setIsCartDisplayed] = useState(false);
-  const location = useLocation();
-  const currentRoute = location.pathname;
+  const { pathname } = useLocation();
 
   const addItemToCart = (newItem) => {
-    if(!isCartDisplayed) setIsCartDisplayed(true);
-
     // Make the new item its own object, so it's not just a reference
-    newItem = {...newItem};
+    newItem = { ...newItem };
 
     setItemsInCart((prevItems) => {
       const existingItemIndex = prevItems.findIndex((item) => item.id === newItem.id);
 
       // If the item is already in the cart, update its quantity
-      if (existingItemIndex !== -1){
+      if (existingItemIndex !== -1) {
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...prevItems[existingItemIndex],
           quantity: prevItems[existingItemIndex].quantity + newItem.quantity,
         };
-
         return updatedItems;
       }
       return [...prevItems, newItem];
-    })
-
+    });
   };
 
   const updateItemQuantity = (updatedItemId, quantity) => {
-    
     setItemsInCart((prevItems) => {
       const existingItemIndex = prevItems.findIndex((item) => item.id === updatedItemId);
 
       const updatedItems = [...prevItems];
       updatedItems[existingItemIndex] = {
         ...prevItems[existingItemIndex],
-        quantity: quantity
+        quantity: quantity,
       };
       return updatedItems;
-    })
-  }
+    });
+  };
 
   const removeItemFromCart = (removedItemId) => {
     setItemsInCart((prevItems) => prevItems.filter((item) => item.id !== removedItemId));
@@ -59,36 +53,67 @@ export default function Root() {
 
   // If we go to checkout, hide the cart when we return to shop
   useEffect(() => {
-    if(location.pathname === "/checkout" || location.pathname === "/" ) {
+    if (location.pathname === '/checkout' || location.pathname === '/') {
       setIsCartDisplayed(false);
-    } 
+    }
   }, [location.pathname]);
+
+  // When the cart is displayed, toggle the ability to scroll the main page
+  useEffect(() => {
+    if (isCartDisplayed) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+      document.body.style.overflow = 'hidden';
+    } else {
+      const scrollY = Math.abs(parseInt(document.body.style.top || '0'));
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.paddingRight = ''; // Reset padding
+      window.scrollTo(0, scrollY); // Restore scroll position
+      document.body.style.overflow = '';
+    }
+  }, [isCartDisplayed]);
 
   return (
     <>
-      <CartContext.Provider value={{addItemToCart, itemsInCart, updateItemQuantity}}>
+      <CartContext.Provider
+        value={{
+          addItemToCart,
+          itemsInCart,
+          updateItemQuantity,
+          removeItemFromCart,
+        }}
+      >
         <header>
-          <div className='header-container'>
-            <h1>THE SHOP</h1>
+          <div className="header-container">
+            <NavLink to={'..'}>
+              <h1>
+                <span className="first-letter">L</span>A<span className="first-letter"> B</span>OUTIQUE
+              </h1>
+            </NavLink>
             <nav>
-              <Link to={`/`}>Home</Link>
-              <Link to={`store`}>Shop</Link>
-              <Link to ={'checkout'}>Checkout</Link>
-              <div>
-                  { currentRoute === '/checkout' ? 
-                    <button onClick={toggleCart} disabled>Open Cart</button> :
-                    <button onClick={toggleCart}>Open Cart</button>}
-                    {currentRoute !== '/checkout'
-                    && <Cart itemsInCart={itemsInCart} 
-                    removeItemFromCart={removeItemFromCart}
-                    clickEvent={toggleCart} 
-                    isCartDisplayed={isCartDisplayed} />}
-              </div>
-            </nav> 
+              <NavLink to={'/'}>Home</NavLink>
+              <NavLink to={'store'}>Shop</NavLink>
+            </nav>
+            <nav>
+              <a href="#" target="" rel="noopener noreferrer">
+                Log in
+              </a>
+              {pathname === '/checkout' ? (
+                <CartButton toggleCart={toggleCart} enabled={false} items={itemsInCart} />
+              ) : (
+                <CartButton toggleCart={toggleCart} enabled={true} items={itemsInCart} />
+              )}
+              {pathname !== '/checkout' && (
+                <Cart itemsInCart={itemsInCart} clickEvent={toggleCart} isCartDisplayed={isCartDisplayed} />
+              )}
+            </nav>
           </div>
         </header>
         <main>
-            <Outlet context={{ addItemToCart, itemsInCart }} />
+          <Outlet context={{ addItemToCart, itemsInCart }} />
         </main>
       </CartContext.Provider>
     </>
