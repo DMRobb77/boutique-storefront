@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import 'material-icons/iconfont/filled.css';
 import 'material-icons/iconfont/outlined.css';
-import './CartButton.css';
+import styles from './CartButton.module.css';
 import { useEffect, useState } from 'react';
 
 const CartButton = ({ toggleCart, enabled, items }) => {
@@ -19,26 +19,32 @@ const CartButton = ({ toggleCart, enabled, items }) => {
   }, [totalCount]);
 
   return (
-    <div className="cart-button-holder">
+    <div className={styles.container}>
       {enabled ? (
         <button onClick={toggleCart}>
           {totalCount > 0 ? (
             <>
-              <span className="count">{totalCount}</span>
-              <span className={`material-icons ${bump ? 'bump' : ''}`}>shopping_cart</span>
+              <span className={styles.count}>{totalCount}</span>
+              <div className={styles.iconWrapper}>
+                <span className={`material-icons ${bump ? styles.bump : ''}`}>shopping_cart</span>
+              </div>
             </>
           ) : (
-            <span className="material-icons-outlined">shopping_cart</span>
+            <div className={styles.iconWrapper}>
+              <span className="material-icons-outlined">shopping_cart</span>
+            </div>
           )}
         </button>
       ) : (
         <button onClick={toggleCart} disabled>
           {totalCount > 0 ? (
-            <>
+            <div className={styles.iconWrapper}>
               <span className="material-icons">shopping_cart</span>
-            </>
+            </div>
           ) : (
-            <span className="material-icons-outlined">shopping_cart</span>
+            <div className={styles.iconWrapper}>
+              <span className="material-icons-outlined">shopping_cart</span>
+            </div>
           )}
         </button>
       )}

@@ -1,5 +1,7 @@
-function App() {
-  return <div>The home page TEST</div>;
-}
+import Home from './components/Home/Home.jsx';
+
+const App = () => {
+  return <Home />;
+};
 
 export default App;

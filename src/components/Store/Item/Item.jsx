@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import './item.css';
+import styles from './item.module.css';
 
-const Item = ({item}) => {
+const Item = ({ item }) => {
   return (
-    <div className='item'>
-      <div className='image-container'>
-        <img src={item.image} width={'180px'}></img>
+    <div className={styles.item}>
+      <div className={styles.imageContainer}>
+        <img src={item.image} width={'180px'} />
       </div>
       <h3>{item.title}</h3>
       <h4>${item.price}</h4>
@@ -14,7 +14,7 @@ const Item = ({item}) => {
 };
 
 Item.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
 };
 
 export default Item;

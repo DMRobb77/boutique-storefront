@@ -1,7 +1,7 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import Cart from '../components/Cart/Cart';
 import { useEffect, useState } from 'react';
-import './root.css';
+import styles from './root.module.css';
 import { CartContext } from '../components/Contexts';
 import CartButton from '../components/Cart/CartButton/CartButton';
 
@@ -87,14 +87,13 @@ export default function Root() {
         }}
       >
         <header>
-          <div className="header-container">
+          <div className={styles.headerContainer}>
             <NavLink to={'..'}>
               <h1>
-                <span className="first-letter">L</span>A<span className="first-letter"> B</span>OUTIQUE
+                <span className={styles.firstLetter}>L</span>A<span className={styles.firstLetter}> B</span>OUTIQUE
               </h1>
             </NavLink>
             <nav>
-              <NavLink to={'/'}>Home</NavLink>
               <NavLink to={'store'}>Shop</NavLink>
             </nav>
             <nav>

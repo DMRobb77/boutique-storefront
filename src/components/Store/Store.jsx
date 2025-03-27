@@ -1,6 +1,6 @@
 import Item from './Item/Item';
 import { Link, Outlet, useLocation, useOutletContext } from 'react-router-dom';
-import './store.css';
+import styles from './store.module.css';
 import { useStore } from './StoreProvider';
 
 const Store = () => {
@@ -17,9 +17,9 @@ const Store = () => {
   ));
 
   return (
-    <div className='store'>
-      {pathname === '/store' && <ul>{itemList}</ul> }
-      <Outlet context={{ addItemToCart  }} />
+    <div className={styles.store}>
+      {pathname === '/store' && <ul>{itemList}</ul>}
+      <Outlet context={{ addItemToCart }} />
     </div>
   );
 };

@@ -7,4 +7,63 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --charcoal: #424b54;
+  --opaque-charcoal: #424b5480;
+  --gray: #93a8ac;
+  --white: #ffffff;
+  --orchid: #e2b4bd;
+  --rose: #9b6a6c;
+  --shadow: rgba(1, 1, 1, 0.205);
+  --header-size: 2.2rem;
+  --header-font: 'EBGaramond';
+  --body-font: 'SplineSans';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SplineSans';
+  src: url('assets/fonts/Spline_Sans/SplineSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 2560px;
+  font-family: var(--body-font);
+}
+
+main {
+  margin-top: 8rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('assets/unsplash3.webp'), url('assets/unsplash3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: var(--white);
+  height: 100vh;
+}
+
+header {
+  background-color: var(--charcoal);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0px 3px 3px var(--shadow);
 }

@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin-top: -4rem;
+}
+
+.home video {
+  object-fit: cover;
+  width: 100vw;
+  max-height: 100%;
+}

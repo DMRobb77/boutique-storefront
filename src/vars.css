@@ -1,0 +1,12 @@
+:root {
+  --charcoal: #424b54;
+  --opaque-charcoal: #424b5480;
+  --gray: #93a8ac;
+  --white: #ffffff;
+  --orchid: #e2b4bd;
+  --rose: #9b6a6c;
+  --shadow: rgba(1, 1, 1, 0.205);
+  --header-size: 2.2rem;
+  --header-font: 'EBGaramond';
+  --body-font: 'SplineSans';
+}

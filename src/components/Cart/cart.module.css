@@ -22,7 +22,7 @@
   transform: translateX(100%);
 }
 
-.cart-top {
+.cartTop {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -32,11 +32,11 @@
   padding: 1rem 1.5rem;
 }
 
-.cart-top button {
+.cartTop button {
   height: 2rem;
 }
 
-.cart-bottom {
+.cartBottom {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -48,65 +48,13 @@
   height: 100%;
 }
 
-.cart-bottom li {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.cartBottom li {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-.cart-details {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  width: 100%;
-  gap: 15px;
-}
-
-.cart-details-right {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.cart-details-right h2 {
-  font-size: 1.1rem;
-  line-height: 1.4rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  height: calc(1rem * 4);
-  margin: 0;
-  padding-right: 10px;
-  padding-top: 5px;
-}
-
-.cart-details-right .price {
-  margin: 0;
-}
-
-.cart-details-right .quantity *{
-  font-size: 1rem;
-}
-
-.cart-image-container {
-  background-color: white;
-  justify-content: center;
-  width: 8rem;
-  height: 8rem;
-  border-radius: 5px 5px;
-  align-self: center;
-}
-
-.cart-image-container img {
-  display: block;
-  justify-self: center;
-  height: 100%;
-  object-fit: contain;
-}
-
-.modal-overlay {
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -122,21 +70,20 @@
   z-index: 1000;
 }
 
-.modal-overlay.active {
+.modalOverlay.active {
   opacity: 1;
   visibility: visible;
   z-index: 1000;
 }
 
-.checkout-link {
+.checkoutLink {
   width: 100%;
   padding: 1rem 2rem 3rem 2rem;
 }
 
-.checkout-link a{
+.checkoutLink a {
   text-decoration: none;
   font-size: 1.3rem;
-  /* background-color: var(--orchid); */
   color: white;
   border: solid 2px var(--white);
   padding: 0.3rem 0.8rem;

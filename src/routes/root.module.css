@@ -1,0 +1,48 @@
+@import '../vars.css';
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  max-width: 2560px;
+  padding: 0 8rem;
+  margin: 0 auto;
+  max-width: 2560px;
+  font-family: var(--body-font);
+}
+
+.headerContainer a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: var(--header-font);
+  color: var(--white);
+  height: 100%;
+  margin: 1rem 0;
+}
+
+.headerContainer a:hover {
+  color: black;
+}
+
+.headerContainer h1 {
+  font-size: var(--header-size);
+  margin: 0;
+}
+
+.headerContainer h1 .firstLetter {
+  font-size: calc(var(--header-size) * 1.3);
+}
+
+/* Navigation Links */
+
+nav {
+  background-color: cadetblue;
+  display: flex;
+  z-index: 2;
+}
+
+nav div {
+  width: 8rem;
+}
