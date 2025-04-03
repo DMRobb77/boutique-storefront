@@ -6,6 +6,7 @@ import { priceFormmatterUSD } from '../../Utility/priceFormatterUSD';
 import { useState } from 'react';
 import 'material-icons/iconfont/outlined.css';
 import ScrollToTop from '../../Utility/ScrollToTop';
+import ArrivalEstimate from '../../Utility/ArrivalEstimate';
 import ItemImage from './ItemImage';
 
 const DetailedItem = () => {
@@ -22,7 +23,7 @@ const DetailedItem = () => {
   };
 
   if (!item) {
-    return <p>Item not found!</p>;
+    return <p>Item not found.</p>;
   }
 
   return (
@@ -31,19 +32,30 @@ const DetailedItem = () => {
       <NavLink to=".." preventScrollReset>
         <span className="material-icons-outlined">arrow_back</span>
       </NavLink>
-      <div>
-        <div className={styles.top}>
-          <ItemImage src={item.image} alt={`Picture of ${item.category}`} />
-          <div className={styles.right}>
+
+      <div className={styles.top}>
+        <ItemImage src={item.image} alt={`Picture of ${item.category}`} />
+        <div className={styles.right}>
+          <div className={styles.topRight}>
             <h2>{item.title}</h2>
-            <p>{priceFormmatterUSD(item.price)}</p>
-            <QuantityInput item={item} isShop={true} quantUpdater={updateProspectiveQuantity} />
-            <button onClick={() => addItemToCart(possibleItem)}>Add to cart</button>
+            <div className={styles.price}>
+              <span className="material-icons-outlined">sell</span>
+              <span>{priceFormmatterUSD(item.price)}</span>
+            </div>
+            <p className={styles.orderNow}>
+              Order now to receive by <br></br> <ArrivalEstimate />
+            </p>
+            <QuantityInput item={item} isShop={true} quantUpdater={updateProspectiveQuantity} large={true} />
           </div>
+          <button onClick={() => addItemToCart(possibleItem)} className={styles.checkoutBtn}>
+            <div>Add to cart</div>
+          </button>
+          <img className={styles.flourishImg} src="../src/assets/flourish-charcoal.png" alt="" width={'250px'} />
         </div>
-        <hr></hr>
-        <p>{item.description}</p>
       </div>
+      <hr></hr>
+      <h3>Item Details</h3>
+      <p className={styles.description}>{item.description}</p>
     </div>
   );
 };

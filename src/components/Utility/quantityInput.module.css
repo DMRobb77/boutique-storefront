@@ -1,0 +1,62 @@
+@import '../../../src/vars.css';
+
+input {
+  text-align: center;
+}
+
+.large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.6rem auto;
+  width: fit-content;
+  height: fit-content;
+}
+
+.quantityInput button {
+  border-radius: var(--small-radius);
+  color: white;
+  box-shadow: 2px 2px 4px var(--shadow);
+  font-size: 1.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border: none;
+  text-shadow: 1px 1px 2px var(--shadow);
+  background-color: var(--gray);
+}
+
+.quantityInput button:active {
+  transform: scale(0.95);
+  transition:
+    transform 0.1s ease-in-out,
+    background-color 0.1s ease-in-out;
+  box-shadow: none;
+  background-color: var(--dark-gray);
+}
+
+.quantityInput:active input {
+  transform: translateY(-1px);
+  transition: transform 0.1s ease-in-out;
+}
+
+.quantityInput button:disabled {
+  background-color: #88aeb94d;
+  cursor: auto;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.555);
+}
+
+.large input {
+  font-size: 1.1rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.large button {
+  font-size: 1.8rem;
+  padding: 0rem 1rem;
+}
+
+.increment {
+  color: white;
+}

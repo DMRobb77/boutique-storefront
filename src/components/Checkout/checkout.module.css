@@ -1,3 +1,5 @@
+@import '../../vars.css';
+
 .checkout {
   display: grid;
   align-items: center;

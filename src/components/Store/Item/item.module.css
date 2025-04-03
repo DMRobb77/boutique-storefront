@@ -1,10 +1,10 @@
+@import '../../../vars.css';
+
 .item {
-  background-color: var(--white);
   justify-content: center;
   display: flexbox;
   flex-direction: column;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: var(--big-radius);
   width: 18rem;
   box-shadow: 3px 3px 8px var(--shadow);
 }
@@ -34,7 +34,7 @@
   justify-content: center;
   width: 100%;
   height: 16rem;
-  border-radius: 5px 5px 0 0;
+  border-radius: var(--big-radius) var(--big-radius) 0 0;
 }
 
 .item img {
@@ -44,4 +44,51 @@
   object-fit: contain;
   width: 100%;
   padding: 1rem;
+}
+
+.priceContainer {
+  border-radius: 0 0 var(--big-radius) var(--big-radius);
+  height: 100%;
+  width: 100%;
+  text-shadow: 2px;
+  text-align: center;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.priceContainer::after {
+  content: '';
+  background-image: linear-gradient(138deg, var(--orchid-highlight) 45%, var(--orchid) 100%);
+  z-index: -1;
+  position: absolute;
+  top: -10rem;
+  right: 0;
+  bottom: -10rem;
+  left: 0;
+}
+
+.item:hover .priceContainer::after {
+  animation: gradientFlip ease-in-out 1.2s alternate infinite;
+  animation-fill-mode: forwards;
+}
+
+.item:hover {
+  box-shadow: 6px 6px 10px var(--shadow);
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes gradientFlip {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }

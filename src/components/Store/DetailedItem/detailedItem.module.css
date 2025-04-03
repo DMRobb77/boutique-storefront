@@ -1,4 +1,6 @@
-/* Remove default input arrows */
+@import '../../../vars.css';
+
+/* Remove default input arrows from quantity input*/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -15,39 +17,64 @@ input[type='number'] {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 45rem;
+  max-width: 55rem;
   margin: 10px;
-  background-color: var(--white);
 }
 
+/* Styles the back button on the top left */
 .itemDetails > a {
-  position: absolute;
-  width: 3rem;
+  position: relative;
+  width: 0;
+  height: 0;
+  font-size: 2.2rem;
+  flex-shrink: 1;
+  top: -0.3rem;
+  left: -3rem;
+  color: var(--charcoal);
+}
+.itemDetails > a > span {
+  font-size: 2.2rem;
+}
+
+.itemDetails > a:hover {
+  text-shadow: 2px 2px 2px var(--shadow);
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.itemDetails > a:active {
+  color: var(--gray);
+  text-shadow: none;
+  transform: scale(0.95);
+}
+
+.itemDetails hr {
+  width: 100%;
+}
+
+.description {
+  padding: 5px 2px;
 }
 
 .top {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   justify-content: center;
   justify-self: center;
-  width: 40rem;
-  gap: 2rem;
+  max-width: 50rem;
+  min-height: 28rem;
+  gap: 3rem;
   align-items: center;
-  margin: 20px;
+  margin: 5px 5px 2rem 5px;
+  padding: 0 10px;
 }
 
 .right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: solid 1px gray;
-  border-radius: 10px;
-  height: 20rem;
-  min-width: 20em;
-}
-
-.right > button {
-  font-size: 1.6rem;
-  border-radius: 0 0 10px 10px;
+  border-radius: var(--big-radius);
+  color: var(--white);
 }
 
 .right h2 {
@@ -57,49 +84,97 @@ input[type='number'] {
   text-overflow: ellipsis;
   -webkit-line-clamp: 4;
   line-clamp: 4;
-  height: calc(1.2em * 4);
+  margin-top: 1rem;
 }
 
 .right p,
-h2 {
-  margin: 10px;
+h2,
+.price {
+  margin: 0 1.2rem;
 }
 
-.imageContainer {
-  background-color: white;
-  justify-content: center;
-  width: 20em;
-  height: 24rem;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-.imageContainer img {
-  display: block;
-  vertical-align: middle;
-  justify-self: center;
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-  object-fit: contain;
-}
-
-.quantity {
+.topRight {
+  min-height: 21rem;
+  border-radius: var(--big-radius) var(--big-radius) 0 0;
+  background-color: var(--charcoal);
+  border: var(--big-radius);
   display: flex;
-  width: 100%;
-  margin: 10px;
-  align-self: center;
+  flex-direction: column;
+  justify-content: space-between;
+  text-shadow: 1px 1px 2px rgb(56, 56, 56);
 }
 
-.quantity input {
-  font-size: 1.2rem;
-  text-align: center;
-  align-self: center;
+/* Style the Add to Cart button */
+.checkoutBtn {
+  position: relative;
+  font-size: 1.6rem;
+  border-radius: 0 0 var(--big-radius) var(--big-radius);
+  height: 3.2rem;
+  color: var(--charcoal);
+  font-weight: 600;
+  background-color: transparent;
+  overflow: hidden;
 }
 
-.quantity button {
+.checkoutBtn::after {
+  content: '';
+  background: linear-gradient(138deg, var(--orchid-highlight) 45%, var(--orchid) 100%);
+  z-index: -1;
+  position: absolute;
+  top: -10rem;
+  right: 0;
+  bottom: -10rem;
+  left: 0;
+}
+
+@keyframes gradientFlip {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.checkoutBtn div {
+  width: 105%;
+  height: 105%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+button:hover::after {
+  animation: gradientFlip linear 0.5s alternate;
+  animation-fill-mode: forwards;
+  transform: scale(2);
+}
+.checkoutBtn:hover div {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+.checkoutBtn:active div {
   font-size: 1.5rem;
-  border-radius: 4px;
-  padding: 4px 8px;
-  width: 3rem;
+  background-color: rgba(0, 0, 0, 0.062);
+}
+
+.price {
+  color: var(--orchid-highlight);
+  font-size: 1.2rem;
+  display: flex;
+  margin-top: 0.5rem;
+  flex: 1 1 0;
+}
+
+.orderNow {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.flourishImg {
+  justify-self: center;
+  margin: 10px auto 0 auto;
+  max-width: 80%;
 }

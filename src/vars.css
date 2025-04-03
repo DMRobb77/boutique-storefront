@@ -2,6 +2,8 @@
   --charcoal: #424b54;
   --opaque-charcoal: #424b5480;
   --gray: #93a8ac;
+  --light-gray: #a8c2c7;
+  --dark-gray: #7b9094;
   --white: #ffffff;
   --orchid: #e2b4bd;
   --rose: #9b6a6c;
@@ -9,4 +11,6 @@
   --header-size: 2.2rem;
   --header-font: 'EBGaramond';
   --body-font: 'SplineSans';
+  --big-radius: 10px;
+  --small-radius: 5px;
 }

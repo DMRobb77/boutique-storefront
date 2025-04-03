@@ -24,10 +24,12 @@ const ItemImage = ({ src, alt }) => {
   };
 
   return (
-    <button onClick={handleOpenModal} className={styles.itemImage}>
+    <button onClick={handleOpenModal} className={styles.itemImageBtn}>
       <div>
-        <img src={src} alt="Item" width={'250px'} />
-        <div>
+        <div className={styles.imageContainer}>
+          <img src={src} alt="Item" width={'250px'} />
+        </div>
+        <div className={styles.expandText}>
           <span className="material-icons-outlined">zoom_in</span>
           <span>Click image to expand</span>
         </div>
@@ -45,7 +47,7 @@ const ItemImage = ({ src, alt }) => {
               }}
             />
           </div>
-          <div>
+          <div className={styles.expandText}>
             <span className="material-icons-outlined">zoom_out</span>
             <span>Click anywhere to close</span>
           </div>

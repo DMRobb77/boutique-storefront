@@ -9,14 +9,16 @@
   -moz-osx-font-smoothing: grayscale;
   --charcoal: #424b54;
   --opaque-charcoal: #424b5480;
-  --gray: #93a8ac;
+  --gray: #88aeb9;
   --white: #ffffff;
   --orchid: #e2b4bd;
+  --orchid-highlight: #f8d6df;
   --rose: #9b6a6c;
   --shadow: rgba(1, 1, 1, 0.205);
   --header-size: 2.2rem;
   --header-font: 'EBGaramond';
   --body-font: 'SplineSans';
+  --standard-radius: 5px;
 }
 
 * {
@@ -50,7 +52,7 @@ main {
 body {
   margin: 0;
   padding: 0;
-  background-image: url('assets/unsplash3.webp'), url('assets/unsplash3.jpg');
+  background-image: url('assets/unsplash3-gradient.webp'), url('assets/unsplash3-gradient.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
