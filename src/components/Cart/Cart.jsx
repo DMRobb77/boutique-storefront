@@ -23,6 +23,8 @@ const Cart = ({ isCartDisplayed, clickEvent, itemsInCart }) => {
         >
           <div className={styles.cartTop}>
             <h2>Your Cart</h2>
+            <span className="material-icons-outlined">shopping_cart</span>
+
             <button onClick={clickEvent}>
               <span className="material-icons-outlined">close</span>
             </button>

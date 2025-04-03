@@ -3,6 +3,7 @@ import CheckoutItem from './CheckoutItem';
 import styles from './checkout.module.css';
 import { priceFormmatterUSD } from '../Utility/priceFormatterUSD';
 import ScrollToTop from '../Utility/ScrollToTop';
+import ArrivalEstimate from '../Utility/ArrivalEstimate';
 import 'material-icons/iconfont/outlined.css';
 
 const Checkout = () => {
@@ -33,7 +34,9 @@ const Checkout = () => {
           <p>Total:</p>
           <p>{priceFormmatterUSD(totalCost + 5.99)}</p>
           <p>Arrives by:</p>
-          <p>ARRIVAL TIME</p>
+          <p>
+            <ArrivalEstimate />
+          </p>
           <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/dQw4w9WgXcQ">
             Buy Now
             <span className="material-icons-outlined">open_in_new</span>

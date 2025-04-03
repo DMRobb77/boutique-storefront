@@ -1,3 +1,5 @@
+@import '../../vars.css';
+
 .sidebar {
   position: fixed;
   right: 0;
@@ -34,6 +36,13 @@
 
 .cartTop button {
   height: 2rem;
+}
+
+/* Styles the material cart icon */
+.cartTop > span {
+  font-size: 2rem;
+  flex-shrink: 4;
+  margin-right: auto;
 }
 
 .cartBottom {

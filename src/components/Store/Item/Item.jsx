@@ -8,7 +8,9 @@ const Item = ({ item }) => {
         <img src={item.image} width={'180px'} />
       </div>
       <h3>{item.title}</h3>
-      <h4>${item.price}</h4>
+      <div className={styles.priceContainer}>
+        <h4>${item.price}</h4>
+      </div>
     </div>
   );
 };
