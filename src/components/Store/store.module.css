@@ -16,3 +16,19 @@
   width: 4rem;
   text-decoration: none;
 }
+
+@keyframes fadeAndSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeAndSlideIn 0.4s ease-in-out forwards;
+}

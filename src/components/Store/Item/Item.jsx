@@ -4,10 +4,12 @@ import styles from './item.module.css';
 const Item = ({ item }) => {
   return (
     <div className={styles.item}>
-      <div className={styles.imageContainer}>
-        <img src={item.image} width={'180px'} />
+      <div>
+        <div className={styles.imageContainer}>
+          <img src={item.image} width={'180px'} />
+        </div>
+        <h3>{item.title}</h3>
       </div>
-      <h3>{item.title}</h3>
       <div className={styles.priceContainer}>
         <h4>${item.price}</h4>
       </div>

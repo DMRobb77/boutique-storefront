@@ -7,6 +7,12 @@
   border-radius: var(--big-radius);
   width: 18rem;
   box-shadow: 3px 3px 8px var(--shadow);
+  background-color: whit;
+}
+
+.item div:first-of-type {
+  background-color: white;
+  border-radius: var(--big-radius) var(--big-radius) 0px 0px;
 }
 
 .item h3 {
@@ -22,6 +28,7 @@
   margin: 2px 8px;
   font-weight: 600;
   text-align: center;
+  background-color: white;
 }
 
 .item h4 {
@@ -74,8 +81,8 @@
 }
 
 .item:hover {
-  box-shadow: 6px 6px 10px var(--shadow);
-  transform: scale(1.02);
+  box-shadow: 3px 3px 6px var(--shadow);
+  transform: scale(1.01);
   transition: all 0.3s ease-in-out;
 }
 
