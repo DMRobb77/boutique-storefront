@@ -93,10 +93,16 @@ export default function Root() {
                 <span className={styles.firstLetter}>L</span>A<span className={styles.firstLetter}> B</span>OUTIQUE
               </h1>
             </NavLink>
+
+            <div>
+              <img src="src\assets\header-charcoal-solid.png" alt="" className={styles.flourish} width={'300px'} />
+
+              <NavLink to={'store'}>Browse Our Wares</NavLink>
+            </div>
+
             <nav>
-              <NavLink to={'store'}>Shop</NavLink>
-            </nav>
-            <nav>
+              {/* <NavLink to={'store'}>Shop</NavLink> */}
+
               <a href="#" target="" rel="noopener noreferrer">
                 Log in
               </a>
