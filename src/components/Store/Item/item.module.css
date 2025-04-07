@@ -7,7 +7,7 @@
   border-radius: var(--big-radius);
   width: 18rem;
   box-shadow: 3px 3px 8px var(--shadow);
-  background-color: whit;
+  transition: transform 0.2s ease-in-out;
 }
 
 .item div:first-of-type {
@@ -51,6 +51,7 @@
   object-fit: contain;
   width: 100%;
   padding: 1rem;
+  transition: transform 0.2s ease-in-out;
 }
 
 .priceContainer {

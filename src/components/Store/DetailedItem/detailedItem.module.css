@@ -153,6 +153,7 @@ button:hover::after {
 .checkoutBtn:hover div {
   transform: scale(1.02);
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .checkoutBtn:active div {
