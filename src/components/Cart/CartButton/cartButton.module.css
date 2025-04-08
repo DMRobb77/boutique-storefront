@@ -1,25 +1,28 @@
+.container {
+  max-width: 3rem;
+}
+
 .container button {
-  min-width: 4rem;
   height: 4rem;
   padding: 0;
   position: relative;
   border: none;
   background-color: transparent;
-  justify-content: center;
+  display: flex;
+  justify-self: flex-end;
   color: var(--white);
-  transform: translateY(0.5rem);
+  transform: translateY(30%);
 }
 
 .container button:hover {
   cursor: pointer;
   color: var(--orchid-highlight);
-  transform: translateY(10%);
   transition: transform 0.08s ease-out;
 }
 
 .container button:active {
   color: var(--orchid);
-  transform: translateY(15%);
+  transform: translateY(30%);
   transition: transform 0.08s ease-out;
 }
 
@@ -30,7 +33,7 @@
   }
   50% {
     transform: scale(1.5);
-    transform: translateY(0.75rem);
+    transform: translateY(15px);
   }
   100% {
     transform: scale(1);
@@ -50,7 +53,7 @@
 }
 
 .bump {
-  animation: bump 0.25s ease-out;
+  animation: bump 0.35s ease-in-out 0.2s forwards;
 }
 
 .container .count {
@@ -58,14 +61,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: var(--rose);
   color: white;
   border-radius: 50%;
   font-weight: bold;
   font-size: 0.8rem;
   width: 1.4rem;
   height: 1.4rem;
-  top: 2.1rem;
-  left: 2.2rem;
+  top: 1.3rem;
+  left: 1.3rem;
   z-index: 1;
 }

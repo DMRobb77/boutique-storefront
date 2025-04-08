@@ -62,7 +62,6 @@ body {
 }
 
 header {
-  /* background: linear-gradient(115deg, var(--charcoal) 55%, var(--dark-gray)); */
   background: radial-gradient(circle at 50% 0%, var(--dark-gray) 55%, var(--charcoal) 100%);
   position: fixed;
   width: 100%;

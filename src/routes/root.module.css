@@ -15,16 +15,13 @@
 
 .headerContainer a {
   text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-family: var(--header-font);
   color: var(--white);
   height: 100%;
   margin: 1rem 0;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.685);
-}
-
-.headerContainer a:nth-child(2) {
-  font-size: 2rem;
+  text-decoration: none;
 }
 
 .headerContainer a:hover {
@@ -38,12 +35,12 @@
   transform: translateY(0.1rem);
 }
 
-.headerContainer h1 {
-  font-size: var(--header-size);
+.headerContainer > a h1 {
+  font-size: 2.6rem;
   margin: 0;
 }
 
-.headerContainer h1 .firstLetter {
+.headerContainer > h1 .firstLetter {
   font-size: calc(var(--header-size) * 1.3);
 }
 
@@ -52,10 +49,9 @@
   width: 22rem;
   height: auto;
   top: 0.1rem;
-  left: 50%;
   z-index: -1;
   position: absolute;
-  transform: translateX(-45%) rotate(180deg);
+  transform: translateX(-20%) rotate(180deg);
 }
 
 /* Navigation Links */

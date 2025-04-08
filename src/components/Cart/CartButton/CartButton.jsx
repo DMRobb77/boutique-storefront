@@ -13,7 +13,7 @@ const CartButton = ({ toggleCart, enabled, items }) => {
     if (totalCount === 0) return;
     setBump(true);
 
-    const timer = setTimeout(() => setBump(false), 250);
+    const timer = setTimeout(() => setBump(false), 800);
 
     return () => clearTimeout(timer);
   }, [totalCount]);

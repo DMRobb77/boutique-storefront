@@ -6,14 +6,15 @@
   top: 0;
   width: clamp(400px, 38%, 800px);
   height: 100%;
-  background-color: #575454;
+  background-color: var(--dark-charcoal);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateX(0);
+  transition: 1s transform ease-in-out;
+  text-shadow: 2px 2px 3px var(--shadow);
 }
 
 .sidebar ul {
@@ -24,12 +25,15 @@
   transform: translateX(100%);
 }
 
+.modalOverlay.active .sidebar {
+}
+
 .cartTop {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--charcoal);
+  background: linear-gradient(to right, var(--dark-gray) 0%, var(--charcoal) 100%);
   font-size: 1.3rem;
   padding: 1rem 1.5rem;
 }
@@ -83,6 +87,7 @@
   opacity: 1;
   visibility: visible;
   z-index: 1000;
+  transition: all 0.1s ease-in-out;
 }
 
 .checkoutLink {
@@ -92,8 +97,61 @@
 
 .checkoutLink a {
   text-decoration: none;
-  font-size: 1.3rem;
-  color: white;
+  font-size: 1rem;
+  color: var(--dark-charcoal);
+  background-color: transparent;
   border: solid 2px var(--white);
+  height: 3rem;
   padding: 0.3rem 0.8rem;
+  border-radius: var(--small-radius);
+  box-shadow: 2px 2px 4px var(--shadow);
+}
+
+.checkoutLink div {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.emptyMessage {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--white);
+  margin: 2rem auto;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.clear {
+  display: flex;
+  background-color: var(--orchid-highlight);
+  padding: 0.5rem 0.75rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: var(--small-radius);
+  border: none;
+  box-shadow: 2px 2px 4px var(--shadow);
+}
+
+.clear span {
+  font-size: 1.4rem;
+  transform: translateY(-2px);
+}
+
+.clear:hover,
+.checkoutLink a:hover {
+  transform: translateY(-2px);
+  border-color: var(--orchid-highlight);
+  box-shadow: 4px 4px 6px var(--shadow);
+  transition: transform 0.1s ease-in-out;
+}
+
+.clear:active,
+.checkoutLink a:active {
+  transform: translateY(2px);
+  transition: transform 0.1s ease-in-out;
 }

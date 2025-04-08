@@ -4,8 +4,12 @@ import styles from './cart.module.css';
 import CartedItem from './CartedItem/CartedItem';
 import 'material-icons/iconfont/outlined.css';
 import { priceFormmatterUSD } from '../Utility/priceFormatterUSD';
+import { useContext } from 'react';
+import { CartContext } from '../Contexts';
 
 const Cart = ({ isCartDisplayed, clickEvent, itemsInCart }) => {
+  const { clearCart } = useContext(CartContext);
+
   const cartedItems = itemsInCart.map((item) => (
     <li key={item.id}>
       <CartedItem item={item} />
@@ -29,11 +33,22 @@ const Cart = ({ isCartDisplayed, clickEvent, itemsInCart }) => {
               <span className="material-icons-outlined">close</span>
             </button>
           </div>
-          {cartedItems && <ul className={styles.cartBottom}>{cartedItems}</ul>}
-          <div className={styles.checkoutLink}>
-            <p>Total Price: {priceFormmatterUSD(totalCost)}</p>
-            <Link to={'checkout'}>Proceed to Checkout</Link>
-          </div>
+          {cartedItems.length > 0 ? (
+            <>
+              <ul className={styles.cartBottom}>{cartedItems}</ul>
+              <div className={styles.checkoutLink}>
+                <p>Total Price: {priceFormmatterUSD(totalCost)}</p>
+                <div>
+                  <Link to={'checkout'}>Proceed to Checkout</Link>{' '}
+                  <button className={styles.clear} onClick={() => clearCart()}>
+                    <span className="material-icons-outlined">delete</span> Clear Cart
+                  </button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <p className={styles.emptyMessage}>Your cart is empty</p>
+          )}
         </div>
       )}
     </div>

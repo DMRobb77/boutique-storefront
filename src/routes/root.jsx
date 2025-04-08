@@ -47,6 +47,11 @@ export default function Root() {
     setItemsInCart((prevItems) => prevItems.filter((item) => item.id !== removedItemId));
   };
 
+  const clearCart = () => {
+    console.log('Clearing cart...');
+    setItemsInCart([]);
+  };
+
   const toggleCart = () => {
     setIsCartDisplayed(!isCartDisplayed);
   };
@@ -65,12 +70,14 @@ export default function Root() {
       document.body.style.top = `-${window.scrollY}px`;
       document.body.style.width = '100%';
       document.body.style.paddingRight = `${scrollBarWidth}px`;
+      document.body.querySelector('header').style.paddingRight = `${scrollBarWidth}px`;
       document.body.style.overflow = 'hidden';
     } else {
       const scrollY = Math.abs(parseInt(document.body.style.top || '0'));
       document.body.style.top = '';
       document.body.style.width = '';
       document.body.style.paddingRight = ''; // Reset padding
+      document.body.querySelector('header').style.paddingRight = ``;
       window.scrollTo(0, scrollY); // Restore scroll position
       document.body.style.overflow = '';
     }
@@ -84,6 +91,7 @@ export default function Root() {
           itemsInCart,
           updateItemQuantity,
           removeItemFromCart,
+          clearCart,
         }}
       >
         <header>
@@ -101,8 +109,6 @@ export default function Root() {
             </div>
 
             <nav>
-              {/* <NavLink to={'store'}>Shop</NavLink> */}
-
               <a href="#" target="" rel="noopener noreferrer">
                 Log in
               </a>

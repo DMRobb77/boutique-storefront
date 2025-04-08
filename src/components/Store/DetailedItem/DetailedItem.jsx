@@ -3,7 +3,7 @@ import { useStore } from '../StoreProvider';
 import QuantityInput from '../../Utility/QuantityInput';
 import styles from './detailedItem.module.css';
 import { priceFormmatterUSD } from '../../Utility/priceFormatterUSD';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import 'material-icons/iconfont/outlined.css';
 import ScrollToTop from '../../Utility/ScrollToTop';
 import ArrivalEstimate from '../../Utility/ArrivalEstimate';
@@ -15,11 +15,26 @@ const DetailedItem = () => {
   const item = items.find((i) => i.id === parseInt(itemId));
   const { addItemToCart } = useOutletContext();
   const [possibleItem, setPossibleItem] = useState(item);
+  const [imageIsAnimated, setImageIsAnimation] = useState(false);
 
   const updateProspectiveQuantity = (newQuantity) => {
     setPossibleItem((prevItem) => {
       return { ...prevItem, quantity: newQuantity };
     });
+  };
+
+  useEffect(() => {
+    if (imageIsAnimated) {
+      const timer = setTimeout(() => {
+        setImageIsAnimation(false);
+      }, 600); // Duration of the animation in milliseconds
+      return () => clearTimeout(timer);
+    }
+  }, [imageIsAnimated]);
+
+  const checkoutClicked = (item) => {
+    setImageIsAnimation(true);
+    addItemToCart(item);
   };
 
   if (!item) {
@@ -34,6 +49,12 @@ const DetailedItem = () => {
       </NavLink>
 
       <div className={styles.top}>
+        <img
+          src={item.image}
+          width={'100px'}
+          alt=""
+          className={`${styles.transferImage} ${imageIsAnimated ? `${styles.sendToCart}` : ''}`}
+        />
         <ItemImage src={item.image} alt={`Picture of ${item.category}`} />
         <div className={styles.right}>
           <div className={styles.topRight}>
@@ -47,7 +68,7 @@ const DetailedItem = () => {
             </p>
             <QuantityInput item={item} isShop={true} quantUpdater={updateProspectiveQuantity} large={true} />
           </div>
-          <button onClick={() => addItemToCart(possibleItem)} className={styles.checkoutBtn}>
+          <button onClick={() => checkoutClicked(possibleItem)} className={styles.checkoutBtn}>
             <div>Add to cart</div>
           </button>
           <img className={styles.flourishImg} src="../src/assets/flourish-charcoal.png" alt="" width={'250px'} />

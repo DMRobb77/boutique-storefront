@@ -1,5 +1,6 @@
 :root {
   --charcoal: #424b54;
+  --dark-charcoal: #3c4146;
   --opaque-charcoal: #424b5480;
   --gray: #93a8ac;
   --light-gray: #a8c2c7;
@@ -8,7 +9,6 @@
   --orchid: #e2b4bd;
   --rose: #9b6a6c;
   --shadow: rgba(1, 1, 1, 0.205);
-  --header-size: 2.2rem;
   --header-font: 'EBGaramond';
   --body-font: 'SplineSans';
   --big-radius: 10px;
