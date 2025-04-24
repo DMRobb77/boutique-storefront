@@ -15,6 +15,7 @@
   transform: translateX(0);
   transition: 1s transform ease-in-out;
   text-shadow: 2px 2px 3px var(--shadow);
+  animation: fadeIn 0.1s ease-in-out;
 }
 
 .sidebar ul {
@@ -92,7 +93,11 @@
 
 .checkoutLink {
   width: 100%;
-  padding: 1rem 2rem 3rem 2rem;
+  padding: 1rem 2rem;
+}
+
+.checkoutLink p {
+  margin: 0;
 }
 
 .checkoutLink a {

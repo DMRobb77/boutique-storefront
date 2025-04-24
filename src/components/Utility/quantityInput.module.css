@@ -69,16 +69,22 @@ input {
   color: rgba(255, 255, 255, 0.555);
 }
 
-.deleteButton {
+.quantityInput .deleteButton {
   border-radius: var(--small-radius);
-  color: white;
+  color: black;
   box-shadow: 2px 2px 4px var(--shadow);
-  font-size: 1.5rem;
-  padding: 0.2rem 0.5rem;
+  box-sizing: border-box;
+  width: 2.5rem;
+  /* font-size: 1rem; */
+  padding: 0.2rem 0.4rem;
   cursor: pointer;
   border: none;
   text-shadow: 1px 1px 2px var(--shadow);
-  background-color: var(--rose);
+  background-color: var(--orchid-highlight);
+}
+
+.deleteButton span {
+  font-size: 1.3rem;
 }
 
 .large input {

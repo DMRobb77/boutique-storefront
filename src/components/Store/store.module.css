@@ -1,6 +1,6 @@
 .store {
   width: clamp(400px, 100%, 1400px);
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
 }
 
 .store ul {

@@ -4,11 +4,11 @@
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  margin-top: -4rem;
+  margin-top: -2.08rem;
 }
 
 .home video {
   object-fit: cover;
-  width: 100vw;
+  width: 99vw;
   max-height: 100%;
 }

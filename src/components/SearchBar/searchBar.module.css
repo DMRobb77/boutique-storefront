@@ -1,0 +1,93 @@
+@import '../../vars.css';
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 35rem;
+  font-size: 1.2rem;
+}
+
+.searchBar input {
+  border-radius: 50rem;
+  border: 1px solid var(--dark-charcoal);
+  width: 100%;
+  padding: 0.5rem 2rem;
+  height: 2.8rem;
+  background: transparent;
+}
+
+.searchBar input::placeholder {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.searchBar input:focus {
+  background-color: white;
+  outline: none;
+}
+
+.searchBar input:focus::placeholder {
+  color: var(--dark-charcoal);
+  opacity: 0.5;
+}
+
+.searchBar > span {
+  position: absolute;
+  left: 1rem;
+  color: var(--white);
+  font-size: 1.5rem;
+  pointer-events: none;
+  top: 0.7rem;
+}
+
+.clear {
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 1rem;
+  top: 0.6rem;
+  cursor: pointer;
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 1.2rem;
+  width: 93%;
+  max-height: 30rem;
+  background-color: var(--dark-charcoal);
+  overflow-y: auto;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.searchResults mark {
+  background-color: var(--orchid-highlight);
+  color: var(--dark-charcoal);
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.result {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.result button {
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: left;
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px var(--dark-charcoal);
+}
+
+.result:hover {
+  background-color: var(--charcoal);
+  color: var(--white);
+  transform: scale(1.01);
+  transition: all 0.08s ease-in-out;
+}

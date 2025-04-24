@@ -12,18 +12,29 @@ const Checkout = () => {
   const totalCost = itemsInCart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className={styles.checkout}>
+    <div className={`${styles.checkout} ${itemsInCart.length === 0 ? styles.emptyCart : ''}`}>
       <div>
         <ScrollToTop />
-        <h1>Your Items</h1>
-        <ul className={styles.checkoutList}>
-          {itemsInCart.map((item, index) => (
-            <li key={item.id}>
-              <CheckoutItem item={item} />
-              {index !== itemsInCart.length - 1 && <hr></hr>}
-            </li>
-          ))}
-        </ul>
+        {itemsInCart.length > 0 ? (
+          <>
+            <h1>Your Items</h1>
+            <ul className={styles.checkoutList}>
+              {itemsInCart.map((item, index) => (
+                <li key={item.id}>
+                  <CheckoutItem item={item} />
+                  {index !== itemsInCart.length - 1 && <hr></hr>}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <>
+            <h1>Your Cart is Empty</h1>
+            <p>
+              It appears your cart is empty. You can add items to it by visiting the <a href="/store">store</a> page.
+            </p>
+          </>
+        )}
       </div>
       {itemsInCart.length > 0 && (
         <div className={styles.orderBox}>

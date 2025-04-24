@@ -9,6 +9,7 @@ const CartButton = ({ toggleCart, enabled, items }) => {
 
   const totalCount = items.reduce((acc, currentItem) => acc + currentItem.quantity, 0);
 
+  //Animate the bump effect when a new item is placed in the cart
   useEffect(() => {
     if (totalCount === 0) return;
     setBump(true);

@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation, useOutletContext } from 'react-router-dom';
 import styles from './store.module.css';
 import { useStore } from './StoreProvider';
 import { useEffect, useState } from 'react';
+import ScrollToTop from '../Utility/ScrollToTop';
 
 const Store = () => {
   const { addItemToCart } = useOutletContext();
@@ -36,6 +37,7 @@ const Store = () => {
 
   return (
     <div className={styles.store}>
+      <ScrollToTop />
       {pathname === '/store' && <ul>{itemList}</ul>}
       <Outlet context={{ addItemToCart }} />
     </div>

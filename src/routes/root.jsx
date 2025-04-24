@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import styles from './root.module.css';
 import { CartContext } from '../components/Contexts';
 import CartButton from '../components/Cart/CartButton/CartButton';
+import SearchBar from '../components/SearchBar/SearchBar';
+import { StoreProvider } from '../components/Store/StoreProvider';
 
 export default function Root() {
   const [itemsInCart, setItemsInCart] = useState([]);
@@ -104,11 +106,14 @@ export default function Root() {
 
             <div>
               <img src="src\assets\header-charcoal-solid.png" alt="" className={styles.flourish} width={'300px'} />
-
-              <NavLink to={'store'}>Browse Our Wares</NavLink>
+              <StoreProvider>
+                <SearchBar />
+              </StoreProvider>
             </div>
 
             <nav>
+              <NavLink to={'store'}>Shop</NavLink>
+
               <a href="#" target="" rel="noopener noreferrer">
                 Log in
               </a>
@@ -127,6 +132,37 @@ export default function Root() {
           <Outlet context={{ addItemToCart, itemsInCart }} />
         </main>
       </CartContext.Provider>
+      <footer>
+        Site by{' '}
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/DMRobb77">
+          Dalton Robbins
+        </a>
+        . Items pulled from the Fake Store API by{' '}
+        <a target="_blank" rel="noopener noreferrer" href="https://fakestoreapi.com/">
+          MohammadReza Keikavousi
+        </a>
+        . Background texture image by{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://unsplash.com/@kiwihug?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >
+          Kiwihug
+        </a>{' '}
+        on{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://unsplash.com/photos/white-textile-with-black-shadow-MS9Tnh3if1o?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+        >
+          Unsplash
+        </a>
+        . Vector art by{' '}
+        <a target="_blank" rel="noopener noreferrer" href="https://www.vecteezy.com/free-vector/frame">
+          Vecteezy
+        </a>
+        .
+      </footer>
     </>
   );
 }
