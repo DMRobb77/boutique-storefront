@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import 'material-icons/iconfont/filled.css';
 import 'material-icons/iconfont/outlined.css';
-import styles from './CartButton.module.css';
+import styles from './cartButton.module.css';
 import { useEffect, useState } from 'react';
 
 const CartButton = ({ toggleCart, enabled, items }) => {
