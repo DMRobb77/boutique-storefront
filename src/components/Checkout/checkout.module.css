@@ -5,7 +5,7 @@
   align-items: center;
   width: clamp(400px, 100%, 900px);
   justify-self: center;
-  margin: -0.4rem auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   gap: 2rem;
   grid-template-columns: 2.2fr 1fr;
   animation: fadeIn 0.2s ease-in-out forwards;

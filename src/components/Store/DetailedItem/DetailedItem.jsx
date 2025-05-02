@@ -3,7 +3,7 @@ import { useStore } from '../StoreProvider';
 import QuantityInput from '../../Utility/QuantityInput';
 import styles from './detailedItem.module.css';
 import { priceFormmatterUSD } from '../../Utility/priceFormatterUSD';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import 'material-icons/iconfont/outlined.css';
 import ScrollToTop from '../../Utility/ScrollToTop';
 import ArrivalEstimate from '../../Utility/ArrivalEstimate';
@@ -23,6 +23,7 @@ const DetailedItem = () => {
     });
   };
 
+  // Animate image flying to shopping cart
   useEffect(() => {
     if (imageIsAnimated) {
       const timer = setTimeout(() => {

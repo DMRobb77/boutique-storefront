@@ -57,7 +57,7 @@ const SearchBar = () => {
         onFocus={() => setIsFocused(true)}
         onBlur={delayUnfocus}
         type="text"
-        placeholder="Browse our wares"
+        placeholder="Search"
       />
 
       {isFocused ? (

@@ -1,14 +1,77 @@
+@import '../../vars.css';
+
 .home {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  margin-top: -2.08rem;
 }
 
 .home video {
   object-fit: cover;
-  width: 99vw;
-  max-height: 100%;
+  width: 99.5vw;
+  height: 91vh;
+}
+
+.buttonDiv {
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 75%;
+}
+
+.buttonDiv a {
+  text-decoration: none;
+}
+
+.buttonDiv button {
+  display: flex;
+  z-index: 1;
+  position: sticky;
+  right: 0;
+  top: 75%;
+  background: radial-gradient(circle at 25% -25%, var(--dark-gray) 35%, var(--charcoal) 100%);
+  box-shadow: 0px 3px 3px var(--shadow);
+  border-style: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 2.2rem;
+  text-align: center;
+  min-width: 30rem;
+  z-index: 1;
+  color: white;
+  padding: 2rem 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.685);
+}
+
+.buttonDiv button:hover {
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  color: var(--orchid-highlight);
+}
+
+.buttonDiv button:active {
+  color: var(--orchid);
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(0.4rem);
+}
+
+.buttonDiv span {
+  font-size: 3rem;
+}
+
+.buttonDiv:hover span {
+  transition: all 0.2s ease-in-out;
+  transform: translateX(1rem) scale(1.5);
+}
+
+.buttonDiv:active span {
+  transform: translateX(2rem) scale(1);
+}
+
+.home h2 {
+  font-size: 2rem;
+  color: var(--dark-charcoal);
+  text-shadow: 1px 1px 3px var(--shadow);
+  margin: 2rem 0 1rem 0;
 }

@@ -51,7 +51,7 @@
   top: 0.1rem;
   z-index: -1;
   position: absolute;
-  transform: translateX(-20%) rotate(180deg);
+  transform: translateX(30%) rotate(180deg);
 }
 
 /* Navigation Links */
@@ -64,4 +64,14 @@ nav {
 
 nav div {
   width: 8rem;
+}
+
+@media (max-width: var(--mobile-width)) {
+  .headerContainer {
+    padding: 0 1.5rem;
+  }
+
+  .headerContainer > a h1 {
+    font-size: 1rem;
+  }
 }

@@ -91,3 +91,12 @@
   transform: scale(1.01);
   transition: all 0.08s ease-in-out;
 }
+
+@media (max-width: var(--mobile-width)) {
+  .searchBar {
+    width: 100%;
+  }
+  .searchBar input {
+    display: none;
+  }
+}

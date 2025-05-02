@@ -1,6 +1,6 @@
 .store {
   width: clamp(400px, 100%, 1400px);
-  margin: 0 auto 3rem auto;
+  margin: 2rem auto 3rem auto;
 }
 
 .store ul {
@@ -31,4 +31,13 @@
 .fadeIn {
   opacity: 0;
   animation: fadeAndSlideIn 0.4s ease-in-out forwards;
+}
+
+@media (max-width: var(--mobile-width)) {
+  .store ul {
+    /* width: 100%; */
+    padding: 0;
+    margin: 0;
+    gap: 1.2rem;
+  }
 }
