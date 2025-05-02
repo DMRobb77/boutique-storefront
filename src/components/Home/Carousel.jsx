@@ -1,6 +1,5 @@
 import { useStore } from '../Store/StoreProvider';
 import { Link } from 'react-router-dom';
-import Item from '../Store/Item/Item';
 import { useEffect, useRef, useState } from 'react';
 import styles from './carousel.module.css';
 

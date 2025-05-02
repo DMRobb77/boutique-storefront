@@ -1,4 +1,4 @@
-import Carousel from './carousel';
+import Carousel from './Carousel';
 import styles from './home.module.css';
 import 'material-icons/iconfont/outlined.css';
 import { Link } from 'react-router-dom';
