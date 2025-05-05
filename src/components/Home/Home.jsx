@@ -14,8 +14,14 @@ const Home = () => {
         </Link>
       </div>
       <video loop muted autoPlay playsInline poster="src/assets/poster.webp" className="hero-video">
-        <source src="src/assets/fashion-b-roll.mp4" type="video/mp4" />
-        <source src="src/assets/fashion-b-roll.webm" type="video/webm" />
+        <source
+          src="https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/fashion-b-roll-HsVmDb7ZPpj9NyQmnEwpCC2B6ChbxJ.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/fashion-b-roll-U90bWVl3YaoHUSjr5cENLbhXCOABDR.webm"
+          type="video/webm"
+        />
       </video>
       <h2>See what's trending</h2>
       <Carousel />

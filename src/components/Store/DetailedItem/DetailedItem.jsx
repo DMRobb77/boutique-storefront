@@ -72,7 +72,12 @@ const DetailedItem = () => {
           <button onClick={() => checkoutClicked(possibleItem)} className={styles.checkoutBtn}>
             <div>Add to cart</div>
           </button>
-          <img className={styles.flourishImg} src="../src/assets/flourish-charcoal.png" alt="" width={'250px'} />
+          <img
+            className={styles.flourishImg}
+            src="https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/flourish-charcoal-bSsx4mdtfOXc4jafw4PKAy2Tfu4HuS.png"
+            alt=""
+            width={'250px'}
+          />
         </div>
       </div>
       <hr></hr>
