@@ -105,7 +105,12 @@ export default function Root() {
             </NavLink>
 
             <div>
-              <img src="src\assets\header-charcoal-solid.png" alt="" className={styles.flourish} width={'300px'} />
+              <img
+                src="https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/header-charcoal-solid-P9zBXDP3Uw4EvtR7C2pqXcU7FyCL7V.png"
+                alt=""
+                className={styles.flourish}
+                width={'300px'}
+              />
               <StoreProvider>
                 <SearchBar />
               </StoreProvider>
