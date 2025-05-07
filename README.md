@@ -1,3 +1,3 @@
 # [La Boutique](https://drobbins-boutique-storefront.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A digital storefront built with React + Vite. Implements a functioning cart and searchbar, and pulls all items from the [Fake Store API](https://fakestoreapi.com/).
