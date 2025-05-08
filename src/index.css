@@ -1,8 +1,55 @@
+@font-face {
+  font-family: 'EBGaramond';
+  src:
+    url('https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/EBGaramond-VariableFont_wght-ok7IjFW4oFleyoMqUEUhG7cIkQj2OG.ttf'),
+    url('https://drobbins-boutique-storefront.vercel.app/assets/assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf')
+      format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SplineSans';
+  src:
+    url('https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/SplineSans-VariableFont_wght-oObhY8AV3JYEQDoz1coeylIQCGEFgk.ttf'),
+    url('https://drobbins-boutique-storefront.vercel.app/assets/assets/fonts/Spline_Sans/SplineSans-VariableFont_wght.ttf')
+      format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+/* 
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v15/SlGDmQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v15/SlGImQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Spline Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/splinesans/v10/SlGDmQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Spline Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/splinesans/v10/SlGImQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
+} */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,27 +63,13 @@
   --rose: #9b6a6c;
   --shadow: rgba(1, 1, 1, 0.205);
   --header-size: 2.2rem;
-  --header-font: 'EBGaramond';
+  --header-font: 'Test';
   --body-font: 'SplineSans';
   --standard-radius: 5px;
 }
 
 * {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'EBGaramond';
-  src: url('assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SplineSans';
-  src: url('assets/fonts/Spline_Sans/SplineSans-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
 }
 
 body {

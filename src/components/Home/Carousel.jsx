@@ -24,8 +24,6 @@ const Carousel = () => {
             setDisplayedItems(items.slice(nextIndex, nextIndex + 3));
           }, 800);
         }
-        console.log(nextIndex, nextIndex + 3);
-
         return nextIndex;
       });
     }, 4000);

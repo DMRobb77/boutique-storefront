@@ -50,7 +50,6 @@ export default function Root() {
   };
 
   const clearCart = () => {
-    console.log('Clearing cart...');
     setItemsInCart([]);
   };
 
