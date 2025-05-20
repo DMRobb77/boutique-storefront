@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import styles from './root.module.css';
 import { CartContext } from '../components/Contexts';
 import CartButton from '../components/Cart/CartButton/CartButton';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchBar from '../components/SearchBar/SearchBar.jsx';
 import { StoreProvider } from '../components/Store/StoreProvider';
+import MobileSearchWrapper from '../components/SearchBar/MobileSearchWrapper';
 
 export default function Root() {
   const [itemsInCart, setItemsInCart] = useState([]);
-  const [isCartDisplayed, setIsCartDisplayed] = useState(false);
+  const [isSearchModalDisplayed, setIsSearchModalDisplayed] = useState(false);
+  const [isCartModalDisplayed, setIsCartModalDisplayed] = useState(false);
   const { pathname } = useLocation();
 
   const addItemToCart = (newItem) => {
@@ -53,20 +55,24 @@ export default function Root() {
     setItemsInCart([]);
   };
 
-  const toggleCart = () => {
-    setIsCartDisplayed(!isCartDisplayed);
+  const toggleSearchModal = () => {
+    setIsSearchModalDisplayed(!isSearchModalDisplayed);
+  };
+
+  const toggleCartModal = () => {
+    setIsCartModalDisplayed(!isCartModalDisplayed);
   };
 
   // If we go to checkout, hide the cart when we return to shop
   useEffect(() => {
     if (location.pathname === '/checkout' || location.pathname === '/') {
-      setIsCartDisplayed(false);
+      setIsSearchModalDisplayed(false);
     }
   }, [location.pathname]);
 
   // When the cart is displayed, toggle the ability to scroll the main page
   useEffect(() => {
-    if (isCartDisplayed) {
+    if (isSearchModalDisplayed || isCartModalDisplayed) {
       const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.top = `-${window.scrollY}px`;
       document.body.style.width = '100%';
@@ -82,7 +88,7 @@ export default function Root() {
       window.scrollTo(0, scrollY); // Restore scroll position
       document.body.style.overflow = '';
     }
-  }, [isCartDisplayed]);
+  }, [isSearchModalDisplayed, isCartModalDisplayed]);
 
   return (
     <>
@@ -103,7 +109,7 @@ export default function Root() {
               </h1>
             </NavLink>
 
-            <div>
+            <div className={styles.desktopSearchBar}>
               <img
                 src="https://iyddlapmuvfxhvgh.public.blob.vercel-storage.com/header-charcoal-solid-P9zBXDP3Uw4EvtR7C2pqXcU7FyCL7V.png"
                 alt=""
@@ -114,20 +120,23 @@ export default function Root() {
                 <SearchBar />
               </StoreProvider>
             </div>
+            <div className={styles.mobileSearchBar}>
+              <MobileSearchWrapper toggleModal={toggleSearchModal} />
+            </div>
 
-            <nav>
+            <nav className={styles.desktop}>
               <NavLink to={'store'}>Shop</NavLink>
 
               <a href="#" target="" rel="noopener noreferrer">
                 Log in
               </a>
               {pathname === '/checkout' ? (
-                <CartButton toggleCart={toggleCart} enabled={false} items={itemsInCart} />
+                <CartButton toggleCart={toggleCartModal} enabled={false} items={itemsInCart} />
               ) : (
-                <CartButton toggleCart={toggleCart} enabled={true} items={itemsInCart} />
+                <CartButton toggleCart={toggleCartModal} enabled={true} items={itemsInCart} />
               )}
               {pathname !== '/checkout' && (
-                <Cart itemsInCart={itemsInCart} clickEvent={toggleCart} isCartDisplayed={isCartDisplayed} />
+                <Cart itemsInCart={itemsInCart} clickEvent={toggleCartModal} isCartDisplayed={isCartModalDisplayed} />
               )}
             </nav>
           </div>

@@ -17,34 +17,6 @@
   font-weight: 100 900;
   font-style: normal;
 }
-/* 
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/ebgaramond/v15/SlGDmQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/ebgaramond/v15/SlGImQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Spline Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/splinesans/v10/SlGDmQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Spline Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/splinesans/v10/SlGImQSNjdsmc30T5KrQAvIH_8TTQZQ.ttf) format('truetype');
-} */
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -132,12 +104,16 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: var(--mobile-width)) {
+@media (max-width: 768px) {
   header {
     height: 5rem;
+    width: 100%;
   }
 
   body {
     padding-top: 4rem;
   }
+}
+
+@media (max-width: 1024px) {
 }

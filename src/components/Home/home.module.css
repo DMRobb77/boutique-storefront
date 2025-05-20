@@ -75,3 +75,16 @@
   text-shadow: 1px 1px 3px var(--shadow);
   margin: 2rem 0 1rem 0;
 }
+
+@media (max-width: 768px) {
+  .home {
+    overflow: hidden;
+  }
+  .home video {
+    height: 50vh;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+}

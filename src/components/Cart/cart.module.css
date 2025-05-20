@@ -26,9 +26,6 @@
   transform: translateX(100%);
 }
 
-.modalOverlay.active .sidebar {
-}
-
 .cartTop {
   display: flex;
   width: 100%;

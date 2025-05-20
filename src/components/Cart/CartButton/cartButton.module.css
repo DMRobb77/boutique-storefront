@@ -72,3 +72,10 @@
   left: 1.3rem;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .container button {
+    transform: translateY(25%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.685);
+  }
+}

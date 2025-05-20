@@ -1,14 +1,16 @@
 import { useStore } from '../Store/StoreProvider';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './searchBar.module.css';
 import 'material-icons/iconfont/outlined.css';
 import Result from './Result';
+import PropTypes from 'prop-types';
 
-const SearchBar = () => {
+const SearchBar = ({ isMobile = false, closeModal }) => {
   const items = useStore();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef(null);
 
   // Filter items based on search term
   useEffect(() => {
@@ -25,8 +27,11 @@ const SearchBar = () => {
   // Clear search term when clicking outside the search bar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest(`.${styles.searchBar}`)) {
+      if (!event.target.closest(`.${styles.searchBar}`) && !isMobile) {
         setSearchTerm('');
+      } else if (!event.target.closest(`.${styles.searchBar}`) && isMobile && inputRef.current) {
+        event.preventDefault();
+        inputRef.current.focus();
       }
     };
 
@@ -37,6 +42,20 @@ const SearchBar = () => {
     };
   }, []);
 
+  // Auto-focus the input field on mobile
+  useEffect(() => {
+    if (isMobile && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  const clearAndCloseModal = () => {
+    () => setSearchTerm('');
+    if (isMobile) {
+      closeModal();
+    }
+  };
+
   const handleKeyboardInput = (e) => {
     const rawValue = e.target.value;
     setSearchTerm(rawValue);
@@ -44,9 +63,11 @@ const SearchBar = () => {
 
   // Slight delay so that the clear button can work properly
   const delayUnfocus = () => {
-    setTimeout(() => {
-      setIsFocused(false);
-    }, 200); // Adjust the delay as needed
+    if (!isMobile) {
+      setTimeout(() => {
+        setIsFocused(false);
+      }, 200); // Adjust the delay as needed
+    }
   };
 
   return (
@@ -58,10 +79,11 @@ const SearchBar = () => {
         onBlur={delayUnfocus}
         type="text"
         placeholder="Search"
+        ref={inputRef}
       />
 
       {isFocused ? (
-        <button className={styles.clear} onClick={() => setSearchTerm('')}>
+        <button className={styles.clear} onClick={clearAndCloseModal}>
           <span className="material-icons-outlined">close</span>
         </button>
       ) : (
@@ -83,6 +105,11 @@ const SearchBar = () => {
       )}
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  isMobile: PropTypes.bool,
+  closeModal: PropTypes.func,
 };
 
 export default SearchBar;

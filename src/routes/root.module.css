@@ -63,15 +63,51 @@ nav {
 }
 
 nav div {
-  width: 8rem;
+  /* width: 8rem; */
 }
 
-@media (max-width: var(--mobile-width)) {
+.mobileSearchBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .headerContainer {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .headerContainer > a {
+    height: fit-content;
+    margin: 0;
+    display: flex;
+    align-items: center;
   }
 
   .headerContainer > a h1 {
-    font-size: 1rem;
+    font-size: 1.75rem;
+    margin: 0;
   }
+
+  .flourish {
+    width: 10rem;
+    transform: translateX(-80%) translateY(35%) rotate(180deg) scale(1.6);
+  }
+
+  .desktop a {
+    display: none;
+  }
+
+  .desktopSearchBar div {
+    display: none;
+  }
+
+  .mobileSearchBar {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
 }

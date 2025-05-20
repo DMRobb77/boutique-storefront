@@ -33,11 +33,18 @@
   animation: fadeAndSlideIn 0.4s ease-in-out forwards;
 }
 
-@media (max-width: var(--mobile-width)) {
+@media (max-width: 768px) {
+  .store {
+    width: 100%;
+  }
+
   .store ul {
     /* width: 100%; */
     padding: 0;
     margin: 0;
     gap: 1.2rem;
   }
+}
+
+@media (max-width: 1024px) {
 }

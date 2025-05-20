@@ -204,7 +204,7 @@ button:hover::after {
     opacity 0.6s ease-in-out;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .top {
     grid-template-columns: 1fr;
     gap: 0.5rem;
@@ -228,4 +228,7 @@ button:hover::after {
 
   .itemDetails {
   }
+}
+
+@media (max-width: 1024px) {
 }

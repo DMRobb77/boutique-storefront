@@ -13,8 +13,6 @@
   --body-font: 'SplineSans';
   --big-radius: 10px;
   --small-radius: 5px;
-  --mobile-width: 768px;
-  --tablet-width: 1024px;
 }
 
 @keyframes fadeIn {
