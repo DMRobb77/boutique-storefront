@@ -66,7 +66,7 @@ export default function Root() {
   // If we go to checkout, hide the cart when we return to shop
   useEffect(() => {
     if (location.pathname === '/checkout' || location.pathname === '/') {
-      setIsSearchModalDisplayed(false);
+      setIsCartModalDisplayed(false);
     }
   }, [location.pathname]);
 

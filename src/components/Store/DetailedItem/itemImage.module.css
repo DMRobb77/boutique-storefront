@@ -99,3 +99,13 @@
   transition: transform 0.1s ease-out; /* Smooth panning effect */
   padding-top: 200px;
 }
+
+@media (max-width: 768px) {
+  .expandText {
+    display: none;
+  }
+
+  .itemImageBtn {
+    pointer-events: none;
+  }
+}

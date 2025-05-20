@@ -39,7 +39,7 @@ const Cart = ({ isCartDisplayed, clickEvent, itemsInCart }) => {
               <div className={styles.checkoutLink}>
                 <p>Total Price: {priceFormmatterUSD(totalCost)}</p>
                 <div>
-                  <Link to={'checkout'}>Proceed to Checkout</Link>{' '}
+                  <Link to={'checkout'}></Link>{' '}
                   <button className={styles.clear} onClick={() => clearCart()}>
                     <span className="material-icons-outlined">delete</span> Clear Cart
                   </button>

@@ -47,6 +47,7 @@ const DetailedItem = () => {
       <ScrollToTop />
       <NavLink to=".." preventScrollReset>
         <span className="material-icons-outlined">arrow_back</span>
+        <span className={styles.mobileText}>Back to Store</span>
       </NavLink>
 
       <div className={styles.top}>

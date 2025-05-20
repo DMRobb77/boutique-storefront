@@ -76,13 +76,50 @@
   margin: 2rem 0 1rem 0;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(1.1) translateX(0.5rem);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
 @media (max-width: 768px) {
   .home {
     overflow: hidden;
   }
+
   .home video {
     height: 50vh;
     width: auto;
+  }
+
+  .buttonDiv {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+
+  .buttonDiv button {
+    font-size: 1.7rem;
+    padding: 0.8rem 1rem;
+    min-width: 10rem;
+    align-items: center;
+  }
+
+  .buttonDiv span {
+    animation: pulse 1.8s infinite;
+  }
+
+  .home h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
   }
 }
 
